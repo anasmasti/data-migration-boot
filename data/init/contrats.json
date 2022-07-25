@@ -1,0 +1,37 @@
+{
+  "validation1_DMG": true,
+  "validation2_DAJC": true,
+  "caution_versee": false,
+  "avance_versee": false,
+  "etat_contrat": {
+    "libelle": "Actif",
+    "etat": {
+      "deleted": false,
+      "date_fin_suspension": {
+        "$date": {
+          "$numberLong": "32472144000000"
+        }
+      },
+      "deleted_proprietaires": [],
+      "is_overdued_av": false,
+      "is_rappel_manuel": false,
+      "_id": {
+        "$oid": "62d19f93c89e2100049983c6"
+      },
+      "motif": [],
+      "piece_jointe_avenant": [],
+      "images_etat_res_lieu_sortie": [],
+      "lettre_res_piece_jointe": []
+    }
+  },
+  "montant_caution": null,
+  "deleted": false,
+  "contrats_suspendu": [],
+  "is_avenant": false,
+  "has_avenant": false,
+  "date_reprise_caution": null,
+  "statut_caution": "En cours",
+
+  "old_contrat": [],
+  "retenue_source_par_mois": null
+}

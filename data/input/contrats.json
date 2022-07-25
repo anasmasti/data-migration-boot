@@ -1,0 +1,59 @@
+{
+  "numero_contrat": "908/Direction Régionale SUD",
+  "date_debut_loyer": {
+    "$date": {
+      "$numberLong": "1496275200000"
+    }
+  },
+  "date_premier_paiement": {
+    "$date": {
+      "$numberLong": "1496275200000"
+    }
+  },
+  "montant_loyer": 20000,
+  "periodicite_paiement": "mensuelle",
+  "date_comptabilisation": {
+    "$date": {
+      "$numberLong": "1657839600000"
+    }
+  },
+  "nombre_part": 1,
+
+  "date_fin_contrat": {
+    "$date": {
+      "$numberLong": "32472144000000"
+    }
+  },
+
+  "proprietaires": [
+    {
+      "$oid": "62d68cc0febed5eb5ee791d1"
+    }
+  ],
+
+  "taxe_edilite_loyer": "",
+  "taxe_edilite_non_loyer": "",
+  "duree_location": null,
+  "declaration_option": "",
+  "taux_impot": 0,
+  "duree": null,
+  "total_montant_brut_loyer": null,
+  "total_montant_net_loyer": null,
+  "retenue_source": 0,
+  "montant_apres_impot": 0,
+  "duree_caution": "",
+  "duree_avance": null,
+  "montant_avance": 0,
+  "date_fin_avance": null,
+  "n_engagement_depense": "",
+  "echeance_revision_loyer": "",
+  "foncier": {
+    "$oid": "627d2516a96a0500043a26b1"
+  },
+  "piece_joint_contrat": [
+    {
+      "image": "uploads/001_SUP_SUD.pdf",
+      "image_idm": ""
+    }
+  ]
+}
