@@ -3,6 +3,7 @@
   "validation2_DAJC": true,
   "caution_versee": false,
   "avance_versee": false,
+  "proprietaires": [],
   "etat_contrat": {
     "libelle": "Actif",
     "etat": {

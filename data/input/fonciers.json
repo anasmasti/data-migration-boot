@@ -1,23 +1,48 @@
-{
-  "id": 1,
-  "adresse": "SUD",
-  "ville": "AGADIR",
-  "latitude": "-656464",
-  "longitude": "45466",
-  "contrat": {
-    "$oid": "62d68cc0febed5eb5ee792d1"
+[
+  {
+    "id": 1,
+    "adresse": "SUD",
+    "ville": "AGADIR",
+    "latitude": "-656464",
+    "longitude": "45466",
+    "contrat": {
+      "$oid": "62d68cc0febed5eb5ee792d1"
+    },
+    "desc_lieu_entrer": "",
+    "superficie": "",
+    "etage": "",
+    "lieu": [
+      {
+        "deleted": false,
+        "lieu": {
+          "$oid": "627d2516a96a0500043a26a1"
+        },
+        "etat_lieu": "Occupé"
+      }
+    ],
+    "type_lieu": "Direction Régionale"
   },
-  "desc_lieu_entrer": "",
-  "superficie": "",
-  "etage": "",
-  "lieu": [
-    {
-      "deleted": false,
-      "lieu": {
-        "$oid": "627d2516a96a0500043a26a1"
-      },
-      "etat_lieu": "Occupé"
-    }
-  ],
-  "type_lieu": "Direction Régionale"
-}
+  {
+    "id": 2,
+    "adresse": "SUD 2",
+    "ville": "CASA",
+    "latitude": "-656464",
+    "longitude": "45466",
+    "contrat": {
+      "$oid": "62d68cc0febed5eb5ee792d1"
+    },
+    "desc_lieu_entrer": "",
+    "superficie": "",
+    "etage": "",
+    "lieu": [
+      {
+        "deleted": false,
+        "lieu": {
+          "$oid": "627d2516a96a0500043a26a1"
+        },
+        "etat_lieu": "Occupé"
+      }
+    ],
+    "type_lieu": "Direction Régionale"
+  }
+]

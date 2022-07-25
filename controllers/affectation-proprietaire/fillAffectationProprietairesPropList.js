@@ -1,4 +1,4 @@
-const affectationProprietaires = require("./aggregateAffectationProprietaire");
+const affectationProprietaires = require("./aggregateAffectationProprietaires");
 const fillMandataireList = require("./fillMandataireList");
 
 let fillAffectationProprietairesPropList = affectationProprietaires.map(
