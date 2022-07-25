@@ -1,4 +1,5 @@
-const fillAffectationProprietairesPropList = require("./controllers/affectation-proprietaire/fillAffectationProprietairesPropList");
-const contrats = require("./controllers/contrat/aggregateContrats");
+const saveProprietaires = require("./controllers/proprietaire/saveProprietaires");
+const postFonciers = require("./services/foncier/postFonciers");
 
-console.log(contrats);
+// saveProprietaires();
+postFonciers()
