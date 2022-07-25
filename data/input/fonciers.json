@@ -5,21 +5,10 @@
     "ville": "AGADIR",
     "latitude": "-656464",
     "longitude": "45466",
-    "contrat": {
-      "$oid": "62d68cc0febed5eb5ee792d1"
-    },
     "desc_lieu_entrer": "",
     "superficie": "",
     "etage": "",
-    "lieu": [
-      {
-        "deleted": false,
-        "lieu": {
-          "$oid": "627d2516a96a0500043a26a1"
-        },
-        "etat_lieu": "Occupé"
-      }
-    ],
+    "lieu": 1,
     "type_lieu": "Direction Régionale"
   },
   {
@@ -28,21 +17,10 @@
     "ville": "CASA",
     "latitude": "-656464",
     "longitude": "45466",
-    "contrat": {
-      "$oid": "62d68cc0febed5eb5ee792d1"
-    },
     "desc_lieu_entrer": "",
     "superficie": "",
     "etage": "",
-    "lieu": [
-      {
-        "deleted": false,
-        "lieu": {
-          "$oid": "627d2516a96a0500043a26a1"
-        },
-        "etat_lieu": "Occupé"
-      }
-    ],
+    "lieu": 2,
     "type_lieu": "Direction Régionale"
   }
 ]

@@ -1,5 +1,5 @@
 const postData = require("../../utils/postData");
 
-module.exports = function postEntites(entites) {
-  return postData("lieu/ajouter", entites);
+module.exports = async function postEntites(entites) {
+    return await postData("lieu/ajouter", entites);
 };

@@ -1,14 +1,16 @@
 const axios = require("axios").default;
+const FormData = require("form-data");
 
-module.exports = function postData(url, data = []) {
+module.exports = function postData(url, data = [], isFormData = false) {
   data.forEach((object) => {
-    axios
-      .post(`http://192.168.1.4:8000/api/v1/${url}/CDGSP`, object)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    if (isFormData) {
+      var formData = new FormData();
+      formData.append("data", JSON.stringify(object));
+    }
+
+    axios.post(
+      `http://192.168.1.4:8000/api/v1/${url}/CDGSP`,
+      isFormData ? formData : object
+    );
   });
 };
