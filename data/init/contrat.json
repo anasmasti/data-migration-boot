@@ -31,7 +31,10 @@
   "has_avenant": false,
   "date_reprise_caution": null,
   "statut_caution": "En cours",
-
+  "duree_caution": "",
+  "duree_avance": null,
+  "montant_avance": 0,
+  "date_fin_avance": null,
   "old_contrat": [],
   "retenue_source_par_mois": null
 }

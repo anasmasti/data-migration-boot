@@ -1,8 +1,3 @@
-const initProprietaire = require("./data/init/proprietaires.json");
-const inputProprietaire = require("./data/input/proprietaires.json");
+const fillAffectationProprietairesPropList = require("./controllers/affectation-proprietaire/fillAffectationProprietairesPropList");
 
-let proprietaire = {
-  ...initProprietaire,
-  ...inputProprietaire,
-};
-console.log(proprietaire);
+console.log(fillAffectationProprietairesPropList);

@@ -1,4 +1,6 @@
-{
+[
+  {
+    "id": 1,
     "cin": "J207703",
     "passport": "",
     "raison_social": "",
@@ -12,4 +14,21 @@
     "banque": "BP Centre Sud",
     "type_proprietaire": "Personne physique",
     "nom_agence_bancaire": "Ait souss"
-}
+  },
+  {
+    "id": 2,
+    "cin": "J207703",
+    "passport": "",
+    "raison_social": "",
+    "n_registre_commerce": "",
+    "telephone": "",
+    "fax": "",
+    "carte_sejour": "",
+    "nom_prenom": "ACHENGLI LAILA",
+    "adresse": "34 et 35 4éme étage, Immeuble Aicha, Bd Hassan II , Agadir",
+    "n_compte_bancaire": "00101211115087750001201090",
+    "banque": "BP Centre Sud",
+    "type_proprietaire": "Personne physique",
+    "nom_agence_bancaire": "Ait souss"
+  }
+]

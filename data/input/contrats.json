@@ -1,4 +1,5 @@
 {
+  "id": 1,
   "numero_contrat": "908/Direction Régionale SUD",
   "date_debut_loyer": {
     "$date": {
@@ -41,10 +42,6 @@
   "total_montant_net_loyer": null,
   "retenue_source": 0,
   "montant_apres_impot": 0,
-  "duree_caution": "",
-  "duree_avance": null,
-  "montant_avance": 0,
-  "date_fin_avance": null,
   "n_engagement_depense": "",
   "echeance_revision_loyer": "",
   "foncier": {
