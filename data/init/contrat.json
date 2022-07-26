@@ -8,17 +8,10 @@
     "libelle": "Actif",
     "etat": {
       "deleted": false,
-      "date_fin_suspension": {
-        "$date": {
-          "$numberLong": "32472144000000"
-        }
-      },
+      "date_fin_suspension": "2999-01-01",
       "deleted_proprietaires": [],
       "is_overdued_av": false,
       "is_rappel_manuel": false,
-      "_id": {
-        "$oid": "62d19f93c89e2100049983c6"
-      },
       "motif": [],
       "piece_jointe_avenant": [],
       "images_etat_res_lieu_sortie": [],

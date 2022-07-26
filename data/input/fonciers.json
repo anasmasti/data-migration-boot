@@ -9,7 +9,8 @@
     "superficie": "",
     "etage": "",
     "lieu": 1,
-    "type_lieu": "Direction Régionale"
+    "type_lieu": "Direction Régionale",
+    "contrat": 1 
   },
   {
     "id": 2,
@@ -21,6 +22,7 @@
     "superficie": "",
     "etage": "",
     "lieu": 2,
+    "contrat": 2,
     "type_lieu": "Direction Régionale"
   }
 ]

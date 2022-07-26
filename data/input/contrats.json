@@ -2,33 +2,14 @@
   {
     "id": 1,
     "numero_contrat": "908/Direction Régionale SUD",
-    "date_debut_loyer": {
-      "$date": {
-        "$numberLong": "1496275200000"
-      }
-    },
-    "date_premier_paiement": {
-      "$date": {
-        "$numberLong": "1496275200000"
-      }
-    },
+    "date_debut_loyer": "2022-06-01",
+    "date_premier_paiement": "2022-06-01",
     "montant_loyer": 20000,
     "periodicite_paiement": "mensuelle",
-    "date_comptabilisation": {
-      "$date": {
-        "$numberLong": "1657839600000"
-      }
-    },
-    "nombre_part": 1,
-
-    "date_fin_contrat": {
-      "$date": {
-        "$numberLong": "32472144000000"
-      }
-    },
-
+    "date_comptabilisation": "",
+    "nombre_part": 3,
+    "date_fin_contrat": "2999-01-01",
     "proprietaires": [],
-
     "taxe_edilite_loyer": "",
     "taxe_edilite_non_loyer": "",
     "duree_location": null,
@@ -52,30 +33,13 @@
   {
     "id": 2,
     "numero_contrat": "908/Direction Régionale SUD 2",
-    "date_debut_loyer": {
-      "$date": {
-        "$numberLong": "1496275200000"
-      }
-    },
-    "date_premier_paiement": {
-      "$date": {
-        "$numberLong": "1496275200000"
-      }
-    },
+    "date_debut_loyer": "2022-07-01",
+    "date_premier_paiement": "2022-07-01",
     "montant_loyer": 20000,
     "periodicite_paiement": "mensuelle",
-    "date_comptabilisation": {
-      "$date": {
-        "$numberLong": "1657839600000"
-      }
-    },
+    "date_comptabilisation": "",
     "nombre_part": 1,
-
-    "date_fin_contrat": {
-      "$date": {
-        "$numberLong": "32472144000000"
-      }
-    },
+    "date_fin_contrat": "2999-01-01",
     "taxe_edilite_loyer": "",
     "taxe_edilite_non_loyer": "",
     "duree_location": null,
