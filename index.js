@@ -13,9 +13,9 @@ const fillAffectationProprietairesPropList = require("./controllers/affectation-
 const fillMandataireList = require("./controllers/affectation-proprietaire/fillMandataireList");
 const proprietaires = require("./controllers/proprietaire/aggregateProprietaires");
 const affectationProprietaires = require("./controllers/affectation-proprietaire/aggregateAffectationProprietaires");
-const getPropObjectIdById = require("./controllers/proprietaire/getPropObjectIdById");
 var ObjectID = require("bson").ObjectID;
 const initAffectationProprietaires = require("./data/init/affectationproprietaire.json");
+const getAffectationObjectIdById = require("./controllers/affectation-proprietaire/getAffectationObjectIdById");
 
 // saveProprietaires();
 // postFonciers()
@@ -70,21 +70,22 @@ entites.forEach(async (entite) => {
                           }/${contratItem.data._id}/${role}`
                         );
                       });
+                      let affectationToSendList = [];
                       await fillAffectationProprietairesPropList.forEach(
                         async (
                           affectationProprietaire,
                           affectationProprietaireIndex
                         ) => {
                           if (contrat.id == affectationProprietaire.contrat) {
-                            var affectationProprietaireObjectId =
-                              new ObjectID();
-
                             proprietaires.forEach(async (prop) => {
                               if (
                                 affectationProprietaire.proprietaire == prop.id
                               ) {
-                                let affectationToSend = {
+                                var affectationProprietaireObjectId =
+                                  new ObjectID();
+                                let affectationToSendItem = {
                                   _id: affectationProprietaireObjectId,
+                                  id: affectationProprietaire.id,
                                   montant_avance_proprietaire:
                                     affectationProprietaire.montant_avance_proprietaire,
                                   tax_avance_proprietaire:
@@ -95,8 +96,6 @@ entites.forEach(async (entite) => {
                                     affectationProprietaire.caution_par_proprietaire,
                                   is_mandataire:
                                     affectationProprietaire.is_mandataire,
-                                  has_mandataire:
-                                    affectationProprietaire.has_mandataire,
                                   proprietaire: prop._id,
                                   taux_impot:
                                     affectationProprietaire.taux_impot,
@@ -111,24 +110,64 @@ entites.forEach(async (entite) => {
                                   declaration_option:
                                     affectationProprietaire.declaration_option,
                                   proprietaire_list:
-                                    affectationProprietaire.proprietaire_list.map(
-                                      (propIdItem) => {
-                                        return getPropObjectIdById(
-                                          propIdItem
-                                        ) != undefined
-                                          ? getPropObjectIdById(propIdItem)
-                                          : null;
-                                      }
-                                    ),
+                                    affectationProprietaire.proprietaire_list,
                                   ...initAffectationProprietaires,
                                 };
-                                await axios.post(
-                                  `http://192.168.1.4:8000/api/v1/affectation-proprietaire/ajouter/${contratItem.data._id}/CDGSP`,
-                                  affectationToSend
+                                affectationToSendList.push(
+                                  affectationToSendItem
                                 );
                               }
                             });
                           }
+                        }
+                      );
+
+                      affectationToSendList.forEach(
+                        async (affectationToSendListItem) => {
+                          let affectationToSend = {
+                            _id: affectationToSendListItem._id,
+                            montant_avance_proprietaire:
+                              affectationToSendListItem.montant_avance_proprietaire,
+                            tax_avance_proprietaire:
+                              affectationToSendListItem.tax_avance_proprietaire,
+                            tax_par_periodicite:
+                              affectationToSendListItem.tax_par_periodicite,
+                            caution_par_proprietaire:
+                              affectationToSendListItem.caution_par_proprietaire,
+                            is_mandataire:
+                              affectationToSendListItem.is_mandataire,
+                            proprietaire:
+                              affectationToSendListItem.proprietaire,
+                            taux_impot: affectationToSendListItem.taux_impot,
+                            retenue_source:
+                              affectationToSendListItem.retenue_source,
+                            montant_apres_impot:
+                              affectationToSendListItem.montant_apres_impot,
+                            montant_loyer:
+                              affectationToSendListItem.montant_loyer,
+                            part_proprietaire:
+                              affectationToSendListItem.part_proprietaire,
+                            declaration_option:
+                              affectationToSendListItem.declaration_option,
+                            proprietaire_list:
+                              affectationToSendListItem.proprietaire_list.map(
+                                (propIdItem) => {
+                                  return getAffectationObjectIdById(
+                                    affectationToSendList,
+                                    propIdItem
+                                  ) != undefined
+                                    ? getAffectationObjectIdById(
+                                        affectationToSendList,
+                                        propIdItem
+                                      )
+                                    : null;
+                                }
+                              ),
+                          };
+                          await axios.post(
+                            `http://192.168.1.4:8000/api/v1/affectation-proprietaire/ajouter/${contratItem.data._id}/CDGSP`,
+                            affectationToSend
+                          );
                         }
                       );
                     });
