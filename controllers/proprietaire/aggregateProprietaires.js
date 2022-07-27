@@ -2,9 +2,8 @@ const initProprietaire = require("../../data/init/proprietaire.json");
 const inputProprietaire = require("../../data/input/proprietaires.json");
 var ObjectID = require("bson").ObjectID;
 
-var proprietaireObjectId = new ObjectID();
-
 let proprietaires = inputProprietaire.map((proprietaire) => {
+  var proprietaireObjectId = new ObjectID();
   return {
     _id: proprietaireObjectId,
     id: proprietaire.id,

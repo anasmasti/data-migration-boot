@@ -12,5 +12,4 @@ let fillAffectationProprietairesPropList = affectationProprietaires.map(
     };
   }
 );
-
 module.exports = fillAffectationProprietairesPropList;

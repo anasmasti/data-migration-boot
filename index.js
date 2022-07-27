@@ -15,6 +15,7 @@ const postFoncier = require("./services/foncier/postFoncier");
 const postContrat = require("./services/contrat/postContrat");
 const validateContrat = require("./services/contrat/validateContrat");
 const postAffectationProprietaire = require("./services/affectation/postAffectationProprietaire");
+const postProprietaire = require("./services/proprietaire/postProprietaire");
 
 dotenv.config();
 const apiUrl = process.env.API_URL;
@@ -63,8 +64,7 @@ entites.forEach(async (entite) => {
                   let affectationToSendList = [];
                   await fillAffectationProprietairesPropList.forEach(
                     async (
-                      affectationProprietaire,
-                      affectationProprietaireIndex
+                      affectationProprietaire
                     ) => {
                       if (contrat.id == affectationProprietaire.contrat) {
                         proprietaires.forEach(async (prop) => {
@@ -106,7 +106,6 @@ entites.forEach(async (entite) => {
                       }
                     }
                   );
-
                   affectationToSendList.forEach(
                     async (affectationToSendListItem) => {
                       let affectationToSend = {
@@ -132,7 +131,7 @@ entites.forEach(async (entite) => {
                         declaration_option:
                           affectationToSendListItem.declaration_option,
                         proprietaire_list:
-                          affectationToSendListItem.proprietaire_list.map(
+                          await affectationToSendListItem.proprietaire_list.map(
                             (propIdItem) => {
                               return getAffectationObjectIdById(
                                 affectationToSendList,
@@ -162,4 +161,8 @@ entites.forEach(async (entite) => {
       }
     });
   });
+});
+
+proprietaires.forEach(async (proprietaire) => {
+  await postProprietaire(apiUrl, proprietaire, "CDGSP");
 });
