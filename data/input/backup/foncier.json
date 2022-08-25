@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "adresse": "SUD",
+      "ville": "AGADIR",
+      "latitude": "-656464",
+      "longitude": "45466",
+      "desc_lieu_entrer": "",
+      "superficie": "",
+      "etage": "",
+      "lieu": 1,
+      "type_lieu": "Direction Régionale",
+      "contrat": 1 
+    },
+    {
+      "id": 2,
+      "adresse": "SUD 2",
+      "ville": "CASA",
+      "latitude": "-656464",
+      "longitude": "45466",
+      "desc_lieu_entrer": "",
+      "superficie": "",
+      "etage": "",
+      "lieu": 2,
+      "contrat": 2,
+      "type_lieu": "Direction Régionale"
+    }
+  ]

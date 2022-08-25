@@ -30,5 +30,15 @@
   "montant_avance": 0,
   "date_fin_avance": null,
   "old_contrat": [],
-  "retenue_source_par_mois": null
+  "retenue_source_par_mois": null,
+  "taxe_edilite_loyer": "",
+  "taxe_edilite_non_loyer": "",
+  "duree_location": null,
+  "declaration_option": "",
+  "piece_joint_contrat": [
+    {
+      "image": "",
+      "image_idm": ""
+    }
+  ]
 }

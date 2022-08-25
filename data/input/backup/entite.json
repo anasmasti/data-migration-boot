@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "attached_DR": null,
+      "attached_SUP": null,
+      "code_lieu": "976",
+      "intitule_lieu": "Direction Régionale SUD HG",
+      "code_localite": "",
+      "telephone": "",
+      "fax": "",
+      "type_lieu": "Direction régionale",
+      "centre_cout_siege": "",
+      "categorie_pointVente": "",
+      "directeur_regional": []
+    },
+    {
+      "id": 2,
+      "attached_DR": null,
+      "attached_SUP": null,
+      "code_lieu": "925",
+      "intitule_lieu": "Direction Régionale SUD 2 B",
+      "code_localite": "",
+      "telephone": "",
+      "fax": "",
+      "type_lieu": "Direction régionale",
+      "centre_cout_siege": "",
+      "categorie_pointVente": "",
+      "directeur_regional": []
+    }
+  ]
