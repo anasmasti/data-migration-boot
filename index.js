@@ -16,12 +16,33 @@ const postContrat = require("./services/contrat/postContrat");
 const validateContrat = require("./services/contrat/validateContrat");
 const postAffectationProprietaire = require("./services/affectation/postAffectationProprietaire");
 const postProprietaire = require("./services/proprietaire/postProprietaire");
+const findEntiteObjectIDByCodeLieu = require("./controllers/entite/findEntiteObjectIDByCodeLieu");
 
 dotenv.config();
 const apiUrl = process.env.API_URL;
 
 entites.forEach(async (entite) => {
-  await postEntite(apiUrl, entite, "CDGSP").then(async (res) => {
+  let entiteToSend = {
+    _id: entite._id,
+    attached_DR:
+      entite.attached_DR == (null || "")
+        ? null
+        : findEntiteObjectIDByCodeLieu(entite.attached_DR)._id,
+    attached_SUP:
+      entite.attached_SUP == (null || "")
+        ? null
+        : findEntiteObjectIDByCodeLieu(entite.attached_SUP)._id,
+    code_lieu: entite.code_lieu,
+    intitule_lieu: entite.intitule_lieu,
+    code_localite: entite.code_localite,
+    telephone: entite.telephone,
+    fax: entite.fax,
+    type_lieu: entite.type_lieu,
+    centre_cout_siege: entite.centre_cout_siege,
+    categorie_pointVente: entite.categorie_pointVente,
+  };
+
+  await postEntite(apiUrl, entiteToSend, "CDGSP").then(async (res) => {
     await fonciers.forEach(async (foncier) => {
       if (entite.id == foncier.lieu) {
         let selectedFoncier = await getFoncierByEntiteId(fonciers, entite.id);
@@ -35,7 +56,7 @@ entites.forEach(async (entite) => {
           superficie: selectedFoncier.superficie,
           etage: selectedFoncier.etage,
           lieu: res.data._id,
-          type_lieu: selectedFoncier.type_lieu,
+          type_lieu: res.data.type_lieu,
           ...initFoncier,
         };
 
@@ -63,9 +84,7 @@ entites.forEach(async (entite) => {
                   });
                   let affectationToSendList = [];
                   await fillAffectationProprietairesPropList.forEach(
-                    async (
-                      affectationProprietaire
-                    ) => {
+                    async (affectationProprietaire) => {
                       if (contrat.id == affectationProprietaire.contrat) {
                         proprietaires.forEach(async (prop) => {
                           if (affectationProprietaire.proprietaire == prop.id) {
